@@ -1,0 +1,21 @@
+<section>
+    <div class="row text-center">
+        <h1>Browse</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 filebrowser">
+            <myresume-file-browser (onFileContent)="onFileContent($event)"></myresume-file-browser>
+            <div class="input-group">
+                <label for="cliptext" class="sr-only">File Contents</label>
+                <textarea class="form-control" rows="10" id="cliptext" #cliptext>{{fileContents}}</textarea>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" title="Copy to clipboard" [clipboard]="cliptext" (clipboardSuccess)="onClipSuccess()" (clipboardError)="onClipError()">
+                    <span class="sr-only">Copy to clipboard</span>&nbsp;<i class="fa fa-clipboard"></i>
+                </button>
+                </span>
+            </div>
+            <div class="help-block alert alert-success" *ngIf="messages.success">{{messages.success}}</div>
+            <div class="help-block alert alert-danger" *ngIf="messages.error">{{messages.error}}</div>
+        </div>
+    </div>
+</section>

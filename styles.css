@@ -1,0 +1,40 @@
+main {
+    padding-top: 65px;
+}
+
+.navbar-default,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-text,
+.navbar-default .navbar-nav>li>a {
+    color: #494949;
+}
+
+.filebrowser {
+    border: solid 1px black;
+    padding: 5px;
+}
+
+.filebrowser li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.filebrowser li.active>.item {
+    background-color: #AAA;
+}
+
+.filebrowser li::before {
+    font-family: 'FontAwesome';
+}
+
+.filebrowser li.file::before {
+    content: '\f016';
+}
+
+.filebrowser li.folder-closed::before {
+    content: '\f114';
+}
+
+.filebrowser li.folder-open::before {
+    content: '\f115';
+}

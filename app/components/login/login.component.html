@@ -1,0 +1,31 @@
+<section>
+    <div class="row text-center">
+        <h1>Login</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="help-block alert alert-danger" *ngIf="formErrors.form">{{formErrors.form}}</div>
+
+                <div class="form-group" [ngClass]="{'has-error':formErrors.EmailAddress}">
+                    <label for="EmailAddress" class="control-label">Email Address</label>
+                    <input type="text" class="form-control" id="EmailAddress" name="EmailAddress" formControlName="EmailAddress" placeholder="Email Address" required />
+                    <div class="help-block alert alert-danger" *ngIf="formErrors.EmailAddress">{{formErrors.EmailAddress}}</div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':formErrors.Password}">
+                    <label for="Password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="Password" formControlName="Password" required />
+                    <div class="help-block alert alert-danger" *ngIf="formErrors.Password">{{formErrors.Password}}</div>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="Register" name="Register" formControlName="Register" />
+                    <label for="Register" class="control-label">Check here if this is the first time registering your username.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</section>

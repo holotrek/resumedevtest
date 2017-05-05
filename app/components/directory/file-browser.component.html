@@ -1,0 +1,7 @@
+<ul>
+    <li *ngIf="isLoading" class="loading">Loading...</li>
+    <li *ngFor="let li of list" (click)="processItem(li, $event)" [ngClass]="getItemClass(li)">
+        <span class="item">{{li.Name}}</span>
+        <myresume-file-browser *ngIf="li.IsExpanded" [parentId]="li.Id" (onFileContent)="internalOnFileContent($event)"></myresume-file-browser>
+    </li>
+</ul>
